@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FF Consórcios | Planejamento que transforma objetivos em conquistas</title>
+  <meta name="description" content="Consórcios para quem quer crescer com organização, previsibilidade e segurança. Automóveis, caminhões e imóveis com a solidez do Grupo FF." />
+  <meta name="theme-color" content="#0a1f3c" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="FF Consórcios" />
+  <meta property="og:description" content="Planejamento que transforma objetivos em conquistas." />
+
+  <!-- Preconnect para performance dos CDNs -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Fontes: Sora (títulos) + Work Sans (texto, referência Finora) -->
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS 4 (CDN do navegador) -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Tema da marca via Tailwind 4 (@theme) + ajustes utilitários.
+       Paleta inspirada no template Finora: verde-floresta escuro + lima vibrante.
+       Os nomes dos tokens (navy/gold) foram mantidos para reaproveitar as
+       classes já aplicadas, mas os valores agora são verdes/lima. -->
+  <style type="text/tailwindcss">
+    @theme {
+      /* "navy" = escala verde-floresta */
+      --color-navy-50:  #f5f8f2;
+      --color-navy-100: #e4ede0;
+      --color-navy-200: #c5d6c1;
+      --color-navy-300: #9bb29a;
+      --color-navy-400: #6d827c;
+      --color-navy-500: #3f5a4e;
+      --color-navy-600: #1f4536;
+      --color-navy-700: #16382b;
+      --color-navy-800: #103024;
+      --color-navy-900: #0c2f25;
+      --color-navy-950: #08231b;
+
+      /* "gold" = escala lima (accent) */
+      --color-gold-300: #dcee86;
+      --color-gold-400: #c7dc49;
+      --color-gold-500: #b3c93a;
+      --color-gold-600: #93a82b;
+
+      --color-sky-accent: #c7dc49;
+
+      --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+      --font-sans: "Work Sans", ui-sans-serif, system-ui, sans-serif;
+    }
+  </style>
+
+  <!-- Estilos custom (animações, glass, etc.) -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body class="font-sans bg-navy-50 text-navy-900 antialiased selection:bg-gold-400/40">
+
+  <!-- Skip link de acessibilidade -->
+  <a href="#hero" class="skip-link">Pular para o conteúdo</a>
+
+  <!-- ============================================================= -->
+  <!-- 1. HEADER FIXO + NAVEGAÇÃO                                     -->
+  <!-- ============================================================= -->
+  <header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <nav class="flex items-center justify-between gap-4 h-18 md:h-20" aria-label="Navegação principal">
+
+        <!-- Logo -->
+        <a href="#hero" class="flex items-center gap-2.5 shrink-0 group" aria-label="FF Consórcios — Início">
+          <img src="assets/img/logo_black.png" alt="FF Consórcios" class=" h-14">
+        </a>
+
+        <!-- Menu desktop -->
+        <ul class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <!-- Produtos com submenu -->
+          <li class="relative group/drop">
+            <button class="nav-link flex items-center gap-1" aria-haspopup="true" aria-expanded="false">
+              Produtos
+              <svg class="w-4 h-4 transition-transform duration-300 group-hover/drop:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <!-- Submenu -->
+            <div class="submenu absolute left-0 top-full pt-3 opacity-0 invisible translate-y-2 group-hover/drop:opacity-100 group-hover/drop:visible group-hover/drop:translate-y-0 transition-all duration-300">
+              <div class="w-60 rounded-2xl bg-white p-2 shadow-2xl shadow-navy-900/15 ring-1 ring-navy-100">
+                <a href="#automoveis" class="submenu-item">
+                  <span><span class="block font-semibold">Automóveis</span><span class="block text-xs text-navy-400">Carros e motos</span></span>
+                </a>
+                <a href="#caminhoes" class="submenu-item">
+                  <span><span class="block font-semibold">Caminhões</span><span class="block text-xs text-navy-400">Carretas e implementos</span></span>
+                </a>
+                <a href="#imoveis" class="submenu-item">
+                  <span><span class="block font-semibold">Imóveis</span><span class="block text-xs text-navy-400">Patrimônio</span></span>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li><a href="#sobre" class="nav-link">Sobre</a></li>
+          <li><a href="#duvidas" class="nav-link">Dúvidas frequentes</a></li>
+          <li><a href="#atendimento" class="nav-link">Atendimento Legal</a></li>
+          <li><a href="#contato" class="nav-link">Contato</a></li>
+        </ul>
+
+        <!-- CTA + Hambúrguer -->
+        <div class="flex items-center gap-2">
+          <a href="https://portal.ffconsorcios.com.br/simulador" target="_blank" rel="noopener"
+             class="btn-primary hidden sm:inline-flex">
+            Simule Agora
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+
+          <!-- Botão menu mobile -->
+          <button id="menu-toggle" class="lg:hidden grid place-items-center w-11 h-11 rounded-xl text-navy-900 hover:bg-navy-100 transition" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+            <span class="hamburger"><span></span><span></span><span></span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Menu mobile (off-canvas) — fora do header para ficar acima de todos
+       os elementos (o header cria um contexto de empilhamento próprio) -->
+  <div id="mobile-menu" class="lg:hidden fixed inset-0 z-[90] pointer-events-none">
+    <div class="mobile-overlay absolute inset-0 bg-navy-950/60"></div>
+    <aside class="mobile-panel absolute right-0 top-0 h-full w-[82%] max-w-sm bg-white shadow-2xl flex flex-col">
+      <div class="flex items-center justify-between p-5 border-b border-navy-100">
+        <span class="font-display font-bold text-lg">Menu</span>
+        <button id="menu-close" class="grid place-items-center w-10 h-10 rounded-lg hover:bg-navy-100 transition" aria-label="Fechar menu">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <nav class="flex-1 overflow-y-auto p-5 flex flex-col gap-1 text-[1.02rem]">
+        <p class="px-3 pt-2 pb-1 text-xs uppercase tracking-widest text-navy-400 font-semibold">Produtos</p>
+        <a href="#automoveis" class="mobile-link">Automóveis</a>
+        <a href="#caminhoes" class="mobile-link">Caminhões</a>
+        <a href="#imoveis" class="mobile-link">Imóveis</a>
+        <div class="my-2 h-px bg-navy-100"></div>
+        <a href="#sobre" class="mobile-link">Sobre</a>
+        <a href="#duvidas" class="mobile-link">Dúvidas frequentes</a>
+        <a href="#atendimento" class="mobile-link">Atendimento Legal</a>
+        <a href="#contato" class="mobile-link">Contato</a>
+      </nav>
+      <div class="p-5 border-t border-navy-100">
+        <a href="https://portal.ffconsorcios.com.br/simulador" target="_blank" rel="noopener" class="btn-primary w-full justify-center">
+          Simule Agora
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </aside>
+  </div>
+
+  <main>
+    <!-- ============================================================= -->
+    <!-- 2. HERO                                                        -->
+    <!-- ============================================================= -->
+    <section id="hero" class="relative overflow-hidden bg-navy-900 text-white pt-32 pb-20 md:pt-40 md:pb-28">
+      <!-- Fundo decorativo -->
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <!-- Formas decorativas com parallax -->
+      <div class="blob blob-lime w-[420px] h-[420px] -top-20 -right-24" data-parallax="0.18" aria-hidden="true"></div>
+      <div class="blob blob-lime-soft w-[360px] h-[360px] bottom-[-120px] left-[-100px]" data-parallax="-0.12" aria-hidden="true"></div>
+      <div class="deco-ring w-72 h-72 -bottom-10 -left-[10%]" data-spin="40" aria-hidden="true"></div>
+
+      <div class="content-z mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-14 items-center">
+
+          <!-- Texto -->
+          <div class="max-w-xl">
+            <p class="hero-anim inline-flex items-center gap-2 mb-5 px-4 py-1.5 rounded-full bg-white/10 ring-1 ring-white/15 text-sm text-navy-100 backdrop-blur">
+              <span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
+              Planejamento que transforma objetivos em conquistas.
+            </p>
+
+            <h1 class="hero-anim font-display font-extrabold leading-[1.08] text-4xl sm:text-5xl xl:text-6xl tracking-tight">
+              Consórcios para quem quer crescer com
+              <span class="text-gradient-gold">organização, previsibilidade e segurança.</span>
+            </h1>
+
+            <p class="hero-anim mt-6 text-lg text-navy-100/90 leading-relaxed">
+              Conquiste seu veículo, renove sua operação ou realize o sonho do imóvel com
+              parcelas planejadas e o respaldo do Grupo FF em cada etapa.
+            </p>
+
+            <div class="hero-anim mt-9 flex flex-wrap items-center gap-4">
+              <a href="https://portal.ffconsorcios.com.br/simulador" target="_blank" rel="noopener" class="btn-primary btn-lg">
+                Simular meu consórcio
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+              <a href="#conquistas" class="btn-ghost-light btn-lg">Conheça os produtos</a>
+            </div>
+
+            <!-- Selos de confiança -->
+            <ul class="hero-anim mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm text-navy-100/80">
+              <li class="flex items-center gap-2"><svg class="w-5 h-5 text-gold-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Sem juros</li>
+              <li class="flex items-center gap-2"><svg class="w-5 h-5 text-gold-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Parcelas previsíveis</li>
+              <li class="flex items-center gap-2"><svg class="w-5 h-5 text-gold-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Solidez do Grupo FF</li>
+            </ul>
+          </div>
+
+          <!-- Foto + mockup de simulador (glassmorphism) sobreposto -->
+          <div class="hero-visual relative hidden lg:block">
+            <!-- Foto principal -->
+            <div class="hero-photo relative z-10 rounded-[1.75rem] overflow-hidden ring-1 ring-white/10 shadow-2xl shadow-navy-950/60">
+              <img src="assets/img/hero.jpg"
+                   alt="Atendimento FF Consórcios: planejamento financeiro para transformar objetivos em conquistas."
+                   class="w-full h-[420px] xl:h-[470px] object-cover" loading="eager" />
+              <div class="absolute inset-0 bg-gradient-to-tr from-navy-950/75 via-navy-900/25 to-transparent"></div>
+            </div>
+
+            <!-- Card simulador (glass) sobreposto -->
+            <div class="float-card glass-card absolute -bottom-9 -left-8 z-30 w-[300px] p-5 rounded-2xl" data-float="2" aria-hidden="true">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xs uppercase tracking-widest text-navy-100/70">Simulador FF</span>
+                <span class="logo-mark grid place-items-center w-7 h-7 rounded-lg text-navy-900 text-[0.65rem] font-extrabold">FF</span>
+              </div>
+              <p class="text-xs text-navy-100/70">Crédito desejado</p>
+              <p class="font-display text-2xl font-bold mb-3">R$ 120.000</p>
+              <div class="h-2 rounded-full bg-white/10 overflow-hidden">
+                <div class="hero-progress h-full rounded-full bg-gradient-to-r from-gold-400 to-gold-600"></div>
+              </div>
+              <div class="mt-2.5 flex justify-between text-[0.72rem] text-navy-100/60">
+                <span>Parcela R$ 1.980</span><span>Sem juros</span>
+              </div>
+            </div>
+
+            <!-- Badge contemplado -->
+            <div class="float-card glass-card absolute -top-5 -right-3 z-30 w-48 p-4 rounded-2xl" data-float="1" aria-hidden="true">
+              <div class="flex items-center gap-2.5">
+                <span class="grid place-items-center w-9 h-9 rounded-lg bg-gold-400 text-navy-900 font-bold">✓</span>
+                <span><span class="block text-[0.7rem] text-navy-100/70 leading-tight">Contemplado</span><span class="block font-semibold text-sm">Crédito liberado</span></span>
+              </div>
+            </div>
+
+            <!-- brilho de fundo -->
+            <div class="absolute -inset-10 -z-10 bg-gold-400/10 blur-3xl rounded-full"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- onda divisória -->
+      <div class="section-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C360,90 1080,-10 1440,40 L1440,80 L0,80 Z" fill="#0c2f25"/></svg>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- 3. PRODUTOS (#conquistas)                                      -->
+    <!-- ============================================================= -->
+    <section id="conquistas" class="section-dark relative overflow-hidden py-20 md:py-28">
+      <!-- Formas decorativas -->
+      <div class="blob blob-lime-soft w-[420px] h-[420px] top-10 -left-32" data-parallax="0.16" aria-hidden="true"></div>
+      <div class="deco-dots w-48 h-48 bottom-16 right-8" data-parallax="-0.2" aria-hidden="true"></div>
+      <div class="deco-ring w-80 h-80 -bottom-24 -right-24" data-spin="50" aria-hidden="true"></div>
+      <div class="absolute w-full h-full bg-[url(https://wordpress.zozothemes.com/finxpert/wp-content/uploads/sites/24/2024/06/map-white.png)] bg-contain bg-no-repeat opacity-20"></div>
+
+      <div class="content-z mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mb-14 reveal">
+          <span class="eyebrow">Produtos FF Consórcios</span>
+          <h2 class="section-title mt-3">O que é possível conquistar com a FF Consórcios</h2>
+          <p class="section-lead mt-4">Escolha o seu objetivo, planeje com previsibilidade e conte com o apoio do Grupo FF em cada etapa.</p>
+        </div>
+
+        <!-- Cards de produto -->
+        <div class="grid md:grid-cols-3 gap-6 lg:gap-7">
+          <!-- Automóveis -->
+          <article id="automoveis" class="product-card reveal" data-stagger>
+            <div class="product-media">
+              <img src="assets/img/produto-automoveis.jpg" alt="Automóvel esportivo em movimento na estrada." loading="lazy" />
+              <span class="tag">Veículos leves</span>
+            </div>
+            <div class="product-body">
+              <h3 class="product-title">Automóveis e motos</h3>
+              <p class="product-text">Conquiste seu veículo com planejamento e liberdade para escolher à vista, no momento certo.</p>
+              <a href="https://portal.ffconsorcios.com.br/simulador" target="_blank" rel="noopener" class="card-link">
+                Simular agora
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Caminhões -->
+          <article id="caminhoes" class="product-card reveal" data-stagger>
+            <div class="product-media">
+              <img src="assets/img/produto-caminhoes.jpg" alt="Caminhão de carga trafegando em rodovia." loading="lazy" />
+              <span class="tag">Operação e agro</span>
+            </div>
+            <div class="product-body">
+              <h3 class="product-title">Caminhões, carretas e implementos</h3>
+              <p class="product-text">Renove ou amplie sua operação com estratégia e previsibilidade para crescer com segurança.</p>
+              <a href="https://portal.ffconsorcios.com.br/simulador" target="_blank" rel="noopener" class="card-link">
+                Simular agora
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Imóveis -->
+          <article id="imoveis" class="product-card reveal" data-stagger>
+            <div class="product-media">
+              <img src="assets/img/produto-imoveis.jpg" alt="Casa moderna iluminada ao entardecer." loading="lazy" />
+              <span class="tag">Patrimônio</span>
+            </div>
+            <div class="product-body">
+              <h3 class="product-title">Imóveis</h3>
+              <p class="product-text">Construa ou adquira seu imóvel com disciplina financeira e foco no longo prazo.</p>
+              <a href="https://portal.ffconsorcios.com.br/simulador" target="_blank" rel="noopener" class="card-link">
+                Simular agora
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- CTA de seção -->
+        <div class="cta-band reveal mt-14">
+          <p class="text-lg md:text-xl font-medium max-w-2xl">
+            Pronto para transformar seu plano em conquista? Faça uma simulação e encontre a melhor carta para o seu momento.
+          </p>
+          <a href="https://portal.ffconsorcios.com.br/simulador" target="_blank" rel="noopener" class="btn-gold btn-lg shrink-0">
+            Quero simular
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- 4. SOBRE O SEGMENTO (#sobre)                                   -->
+    <!-- ============================================================= -->
+    <section id="sobre" class="relative overflow-hidden py-20 md:py-28 bg-white">
+      <!-- Formas decorativas -->
+      <div class="blob blob-lime-soft w-[380px] h-[380px] -top-24 right-[-120px]" data-parallax="0.14" aria-hidden="true"></div>
+      <div class="deco-dots w-44 h-44 bottom-10 left-4" data-parallax="-0.18" aria-hidden="true"></div>
+
+      <div class="content-z mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-14 items-center">
+
+          <!-- Texto -->
+          <div class="reveal">
+            <span class="eyebrow">Sobre o segmento</span>
+            <h2 class="section-title mt-3">Uma forma inteligente de planejar a conquista do seu próximo bem</h2>
+            <p class="section-lead mt-5">
+              O consórcio é uma forma de planejar a compra de um bem. Você entra em um grupo, paga
+              parcelas mensais e pode ser contemplado por sorteio ou lance para utilizar o crédito na sua aquisição.
+            </p>
+
+            <!-- Destaques -->
+            <ul class="mt-8 space-y-3">
+              <li class="highlight-item"><span class="check">✓</span> Parcelas planejadas</li>
+              <li class="highlight-item"><span class="check">✓</span> Crédito para negociar</li>
+              <li class="highlight-item"><span class="check">✓</span> Segurança do Grupo FF</li>
+            </ul>
+          </div>
+
+          <!-- Imagem / selo -->
+          <div class="reveal">
+            <div class="about-visual relative rounded-3xl p-8 md:p-10 text-white overflow-hidden">
+              <img src="assets/img/sobre.jpg"
+                   alt="Aperto de mãos representando a segurança e a confiança do Grupo FF."
+                   class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+              <div class="about-visual-bg" aria-hidden="true"></div>
+              <div class="relative">
+                <div class="grid place-items-center w-16 h-16 rounded-2xl bg-white/10 ring-1 ring-white/20 mb-6">
+                  <!-- escudo -->
+                  <svg class="w-8 h-8 text-gold-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+                </div>
+                <p class="text-sm uppercase tracking-widest text-gold-300 font-semibold">Selo de garantia</p>
+                <p class="font-display text-2xl md:text-3xl font-bold mt-2 leading-snug">
+                  Sem juros — com parcelas previsíveis e controle financeiro.
+                </p>
+
+                <div class="mt-8 grid grid-cols-3 gap-4">
+                  <div class="about-stat"><span class="num" data-count="100">0</span><span class="suf">%</span><p>planejado</p></div>
+                  <div class="about-stat"><span class="num" data-count="0">0</span><p>juros</p></div>
+                  <div class="about-stat"><span class="num" data-count="60">0</span><p>meses</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- 5. VANTAGENS                                                   -->
+    <!-- ============================================================= -->
+    <section id="vantagens" class="relative overflow-hidden py-20 md:py-28">
+      <!-- Formas decorativas -->
+      <div class="blob blob-lime-soft w-[400px] h-[400px] top-[-120px] left-[-120px]" data-parallax="0.15" aria-hidden="true"></div>
+      <div class="deco-ring deco-ring--solid w-72 h-72 -bottom-20 right-[6%]" data-spin="60" aria-hidden="true"></div>
+
+      <div class="content-z mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mb-14 reveal">
+          <span class="eyebrow">Por que escolher consórcio?</span>
+          <h2 class="section-title mt-3">Vantagens para conquistar com mais planejamento</h2>
+          <p class="section-lead mt-4">Mais clareza para decidir, mais organização para pagar e mais poder de negociação quando a carta for contemplada.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <article class="advantage-card reveal" data-stagger>
+            <div class="advantage-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h3 class="advantage-title">Sem juros</h3>
+            <p class="advantage-text">Você planeja sua conquista sem incidência de juros, pagando apenas taxas administrativas previstas em contrato.</p>
+          </article>
+
+          <article class="advantage-card reveal" data-stagger>
+            <div class="advantage-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg>
+            </div>
+            <h3 class="advantage-title">Poder de compra à vista</h3>
+            <p class="advantage-text">Ao ser contemplado, você recebe o valor do crédito para negociar como pagamento à vista.</p>
+          </article>
+
+          <article class="advantage-card reveal" data-stagger>
+            <div class="advantage-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <h3 class="advantage-title">Segurança do Grupo FF</h3>
+            <p class="advantage-text">Conte com a solidez e o compromisso do Grupo FF em cada etapa do seu planejamento.</p>
+          </article>
+
+          <article class="advantage-card reveal" data-stagger>
+            <div class="advantage-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="m7 14 4-4 3 3 5-6"/></svg>
+            </div>
+            <h3 class="advantage-title">Controle total do investimento</h3>
+            <p class="advantage-text">Parcelas previsíveis e um plano estruturado que se adapta ao seu momento financeiro.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- 6. DÚVIDAS FREQUENTES (#duvidas)                               -->
+    <!-- ============================================================= -->
+    <section id="duvidas" class="relative overflow-hidden py-20 md:py-28 bg-white">
+      <!-- Formas decorativas -->
+      <div class="deco-dots w-56 h-56 top-12 left-6" data-parallax="0.16" aria-hidden="true"></div>
+      <div class="blob blob-lime-soft w-[360px] h-[360px] bottom-[-120px] right-[-120px]" data-parallax="-0.12" aria-hidden="true"></div>
+
+      <div class="content-z mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 reveal">
+          <span class="eyebrow">Tire suas dúvidas</span>
+          <h2 class="section-title mt-3">Dúvidas Frequentes</h2>
+        </div>
+
+        <div class="space-y-4">
+          <!-- Item -->
+          <div class="faq-item reveal" data-stagger>
+            <button class="faq-trigger" aria-expanded="false">
+              <span>O que é lance?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-panel">
+              <div class="faq-panel-inner">
+                É uma modalidade para concorrer à contemplação mediante o pagamento antecipado de parcelas. São diversas modalidades de lances disponíveis de acordo com o grupo contratado que podem auxiliar você a chegar na sua realização.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal" data-stagger>
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Quais são as modalidades disponíveis?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-panel">
+              <div class="faq-panel-inner">
+                Através da FF Consórcios você poderá aderir cartas de crédito para Móveis, Imóveis e Serviços.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal" data-stagger>
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Como posso ser contemplado?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-panel">
+              <div class="faq-panel-inner">
+                A cada mês, em datas previamente estipuladas, as assembleias são realizadas para definir os contemplados, por sorteio e por lance. Na primeira possibilidade, nossos grupos de consórcio utilizam os resultados da extração da Loteria Federal, que equivalem aos números das cotas. Apenas consorciados adimplentes e com pagamento da parcela até a data de vencimento concorrem. *Os métodos de realização dos sorteios variam por produto.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal" data-stagger>
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Quando serei contemplado?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-panel">
+              <div class="faq-panel-inner">
+                O consorciado concorre desde a primeira assembleia, porém, não há como prever quando a cota será contemplada. Para manter ativas as chances nos sorteios e poder realizar a oferta de lances, as parcelas precisam sempre ser pagas até a data de vencimento.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- 7. ATENDIMENTO LEGAL (#atendimento)                            -->
+    <!-- ============================================================= -->
+    <section id="atendimento" class="relative overflow-hidden py-20 md:py-28">
+      <!-- Formas decorativas -->
+      <div class="blob blob-lime-soft w-[380px] h-[380px] top-[-100px] right-[-120px]" data-parallax="0.14" aria-hidden="true"></div>
+      <div class="deco-dots w-44 h-44 bottom-12 left-2" data-parallax="-0.16" aria-hidden="true"></div>
+
+      <div class="content-z mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mb-14 reveal">
+          <span class="eyebrow">Atendimento Legal</span>
+          <h2 class="section-title mt-3">Políticas, Termos e Cadastros</h2>
+          <p class="section-lead mt-4">Acesse agora os documentos oficiais e nossos canais de atendimento.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Downloads -->
+          <a href="/docs/contrato-bens-moveis.pdf" download class="legal-card reveal" data-stagger>
+            <span class="legal-badge">Download</span>
+            <h3 class="legal-title">Regulamentos Grupos de Consórcio</h3>
+            <p class="legal-sub">Bens móveis</p>
+            <span class="legal-action">Baixar documento <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg></span>
+          </a>
+
+          <a href="/docs/regulamentov3.pdf" download class="legal-card reveal" data-stagger>
+            <span class="legal-badge">Download</span>
+            <h3 class="legal-title">Regulamentos Grupos de Consórcio</h3>
+            <p class="legal-sub">Bens imóveis</p>
+            <span class="legal-action">Baixar documento <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg></span>
+          </a>
+
+          <a href="/docs/regulamentov3.pdf" download class="legal-card reveal" data-stagger>
+            <span class="legal-badge">Download</span>
+            <h3 class="legal-title">Regulamentos Grupos de Consórcio</h3>
+            <p class="legal-sub">Serviços</p>
+            <span class="legal-action">Baixar documento <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg></span>
+          </a>
+
+          <a href="/docs/demonstracoes-financeiras.pdf" download class="legal-card reveal" data-stagger>
+            <span class="legal-badge">Download</span>
+            <h3 class="legal-title">Demonstrações Financeiras</h3>
+            <p class="legal-sub">Baixe agora</p>
+            <span class="legal-action">Baixar documento <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg></span>
+          </a>
+
+          <!-- Fale Conosco -->
+          <a href="#contato" class="legal-card legal-card--alt reveal" data-stagger>
+            <span class="legal-badge legal-badge--alt">Acessar</span>
+            <h3 class="legal-title">Fale Conosco</h3>
+            <p class="legal-sub">Entre em contato com nossa equipe!</p>
+            <span class="legal-action">Ir para contato <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+
+          <!-- Ouvidoria -->
+          <a href="callto:08005900127" class="legal-card legal-card--alt reveal" data-stagger>
+            <span class="legal-badge legal-badge--alt">Ligar</span>
+            <h3 class="legal-title">Ouvidoria</h3>
+            <p class="legal-sub">Estamos aqui para te ajudar!</p>
+            <span class="legal-action">0800 590 0127 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></span>
+          </a>
+
+          <!-- Canal de Denúncias -->
+          <a href="#contato" class="legal-card legal-card--alt reveal" data-stagger>
+            <span class="legal-badge legal-badge--alt">Acessar</span>
+            <h3 class="legal-title">Canal de Denúncias</h3>
+            <p class="legal-sub">Faça sua denúncia de forma anônima!</p>
+            <span class="legal-action">Acessar canal <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- 8. CONTATO (#contato)                                          -->
+    <!-- ============================================================= -->
+    <section id="contato" class="py-20 md:py-28 bg-navy-900 text-white relative overflow-hidden relative">
+      <div class="hero-grid opacity-40" aria-hidden="true"></div>
+      <!-- Formas decorativas -->
+      <div class="blob blob-lime w-[420px] h-[420px] -top-24 -left-24" data-parallax="0.16" aria-hidden="true"></div>
+      <div class="blob blob-lime-soft w-[360px] h-[360px] bottom-[-120px] right-[-100px]" data-parallax="-0.14" aria-hidden="true"></div>
+      <div class="deco-ring absolute w-80 h-80 -right-[20%] -bottom-[20%]" data-spin="70" aria-hidden="true"></div>
+
+      <div class="content-z mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+        <span class="eyebrow eyebrow--light reveal">Contato</span>
+        <h2 class="section-title text-white mt-3 reveal">Utilize os botões abaixo para falar conosco</h2>
+
+        <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5 text-left">
+          <a href="callto:08005900127" class="contact-card reveal" data-stagger>
+            <div class="contact-ico">📞</div>
+            <p class="contact-label">Ouvidoria</p>
+            <p class="contact-value">0800 590 0127</p>
+          </a>
+          <a href="http://wa.me/+555491407901" target="_blank" rel="noopener" class="contact-card reveal" data-stagger>
+            <div class="contact-ico">💬</div>
+            <p class="contact-label">WhatsApp</p>
+            <p class="contact-value">Fale agora</p>
+          </a>
+          <a href="mailto:comercial@ffconsorcios.com.br" class="contact-card reveal" data-stagger>
+            <div class="contact-ico">✉️</div>
+            <p class="contact-label">E-mail</p>
+            <p class="contact-value break-all">comercial@ffconsorcios.com.br</p>
+          </a>
+          <button type="button" id="open-cv-modal" class="contact-card contact-card--cta reveal" data-stagger>
+            <div class="contact-ico">📄</div>
+            <p class="contact-label">Trabalhe conosco</p>
+            <p class="contact-value">Enviar CV</p>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================= -->
+  <!-- 9. FOOTER                                                      -->
+  <!-- ============================================================= -->
+  <footer class="bg-navy-950 text-navy-200 pt-16 pb-8">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-10 items-start pb-10 border-b border-white/10">
+        <div class="max-w-md">
+          <a href="#hero" class="flex items-center gap-2.5 mb-4">
+            <img src="assets/img/logo_black.png" alt="FF Consórcios" class=" h-14">
+          </a>
+          <p class="text-navy-200/80 leading-relaxed">Sua conquista começa com um plano. Nós estamos aqui para ajudar.</p>
+
+          <!-- Redes sociais -->
+          <div class="mt-6 flex items-center gap-3">
+            <a href="https://www.facebook.com/ffconsorcios" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12Z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/ff.consorcios_" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/grupoffcred" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm6 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.5c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9V21H9V9Z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@ffconsorcios" target="_blank" rel="noopener" class="social-btn" aria-label="YouTube">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.5-.45-5.18a2.78 2.78 0 0 0-1.95-1.96C18.88 4.4 12 4.4 12 4.4s-6.88 0-8.6.46A2.78 2.78 0 0 0 1.45 6.82C1 8.5 1 12 1 12s0 3.5.45 5.18a2.78 2.78 0 0 0 1.95 1.96c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.95-1.96C23 15.5 23 12 23 12ZM9.75 15.5v-7l6 3.5-6 3.5Z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Links rápidos + endereço -->
+        <div class="grid sm:grid-cols-2 gap-8">
+          <div>
+            <h4 class="footer-title">Navegação</h4>
+            <ul class="space-y-2 text-sm">
+              <li><a href="#conquistas" class="footer-link">Produtos</a></li>
+              <li><a href="#sobre" class="footer-link">Sobre</a></li>
+              <li><a href="#duvidas" class="footer-link">Dúvidas frequentes</a></li>
+              <li><a href="#atendimento" class="footer-link">Atendimento Legal</a></li>
+              <li><a href="#contato" class="footer-link">Contato</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer-title">Endereço</h4>
+            <address class="not-italic text-sm leading-relaxed text-navy-200/80">
+              Avenida Tiradentes, nº 40,<br />Erechim - RS.<br />
+              CNPJ 62.534.158/0001-07
+            </address>
+            <a href="https://portal.ffconsorcios.com.br/simulador" target="_blank" rel="noopener" class="btn-gold mt-5 inline-flex">
+              Simular
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <p class="pt-8 text-center text-sm text-navy-200/60">© FF Consórcios - 2026.</p>
+    </div>
+  </footer>
+
+  <!-- ============================================================= -->
+  <!-- 10. MODAL "ENVIAR CURRÍCULO"                                   -->
+  <!-- ============================================================= -->
+  <div id="cv-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="cv-modal-title">
+    <div class="modal-overlay"></div>
+    <div class="modal-dialog" role="document">
+      <button id="cv-modal-close" class="modal-close" aria-label="Fechar">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+
+      <div class="mb-6">
+        <span class="grid place-items-center w-12 h-12 rounded-xl bg-navy-900 text-gold-400 text-2xl mb-4">📄</span>
+        <h3 id="cv-modal-title" class="font-display text-2xl font-bold">Enviar currículo</h3>
+        <p class="text-navy-500 mt-1 text-sm">Faça parte do Grupo FF. Preencha os dados abaixo.</p>
+      </div>
+
+      <form id="cv-form" novalidate>
+        <div class="form-group">
+          <label for="cv-nome">Nome completo</label>
+          <input type="text" id="cv-nome" name="nome" required autocomplete="name" placeholder="Seu nome completo" />
+          <span class="form-error" data-for="cv-nome"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="cv-email">E-mail</label>
+          <input type="email" id="cv-email" name="email" required autocomplete="email" placeholder="voce@email.com" />
+          <span class="form-error" data-for="cv-email"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="cv-telefone">Telefone</label>
+          <input type="tel" id="cv-telefone" name="telefone" required autocomplete="tel" placeholder="(00) 00000-0000" />
+          <span class="form-error" data-for="cv-telefone"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="cv-arquivo">Arquivo do currículo <span class="text-navy-400 font-normal">(PDF, DOC ou DOCX, máx. 5MB)</span></label>
+          <label class="file-drop" for="cv-arquivo">
+            <svg class="w-6 h-6 text-navy-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0-12 4 4m-4-4-4 4M5 21h14"/></svg>
+            <span class="file-drop-text">Clique para selecionar o arquivo</span>
+            <span class="file-name" id="cv-file-name"></span>
+          </label>
+          <input type="file" id="cv-arquivo" name="arquivo" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required class="sr-only" />
+          <span class="form-error" data-for="cv-arquivo"></span>
+        </div>
+
+        <button type="submit" class="btn-primary w-full justify-center btn-lg mt-2">
+          Enviar currículo
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+        </button>
+
+        <p id="cv-success" class="form-success" hidden>✓ Currículo enviado com sucesso! Em breve entraremos em contato.</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Botão flutuante de simulação (mobile-friendly) -->
+  <a href="https://portal.ffconsorcios.com.br/simulador" target="_blank" rel="noopener" id="float-cta" class="float-cta" aria-label="Simular consórcio">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 7h6m-6 4h6m-6 4h4M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"/></svg>
+    <span>Simular</span>
+  </a>
+
+  <!-- ============================================================= -->
+  <!-- BIBLIOTECAS (CDN): GSAP, ScrollTrigger, Lenis                  -->
+  <!-- ============================================================= -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+
+  <!-- Script principal -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
